@@ -7,8 +7,9 @@ import "slick-carousel/slick/slick-theme.css";
 const facebookMedia = [
   { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Julian.Ybarra.Tattoos/videos/1415109815893391" },
   { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1734885490314549" },
-  { type: "image", url: "https://www.facebook.com/photo.php?fbid=1113697124097254&set=pb.100063709292524.-2207520000&type=3" },
-  { type: "image", url: "https://www.facebook.com/photo.php?fbid=1090630216403945&set=pb.100063709292524.-2207520000&type=3" },
+  { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1734885490314549" },
+  { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1734885490314549" },
+  { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1734885490314549" },
 ];
 
 export default function Home() {
