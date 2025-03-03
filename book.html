@@ -59,15 +59,18 @@
             <button type="button" id="pay-button">Pay $200 Deposit</button>
         </form>
     </div>
-
-    <script>
+       <script>
         document.addEventListener("DOMContentLoaded", function () {
+            if (typeof FullCalendar === "undefined") {
+                console.error("FullCalendar script is not loaded properly.");
+                return;
+            }
+
             var calendarEl = document.getElementById("calendar");
             if (calendarEl) {
                 var calendar = new FullCalendar.Calendar(calendarEl, {
                     initialView: "dayGridMonth",
                     selectable: true,
-                    plugins: [ "interaction" ],
                     select: function (info) {
                         document.getElementById("selectedDate").value = info.startStr;
                         document.getElementById("booking-form").style.display = "block";
@@ -98,7 +101,7 @@
                 headers: { "Content-Type": "application/json" },
                 body: JSON.stringify({ name, email, phone, selectedDate, deposit: 200 })
             });
-            
+
             const session = await response.json();
             stripe.redirectToCheckout({ sessionId: session.id });
         });
