@@ -26,6 +26,22 @@ export default function Home() {
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-6">
+      {/* Navigation Buttons at the Top */}
+      <div className="w-full max-w-lg flex flex-col gap-4 mb-8">
+        <Link href="/gallery" className="block w-full text-center bg-gray-800 py-3 rounded-lg text-xl">
+          View Gallery
+        </Link>
+        <Link href="/book" className="block w-full text-center bg-red-600 py-3 rounded-lg text-xl">
+          Book an Appointment
+        </Link>
+        <Link href="https://www.facebook.com/Julian.Ybarra.Tattoos" target="_blank" className="block w-full text-center bg-blue-600 py-3 rounded-lg text-xl">
+          Follow on Social Media
+        </Link>
+        <Link href="/faqs" className="block w-full text-center bg-gray-700 py-3 rounded-lg text-xl">
+          FAQs
+        </Link>
+      </div>
+      
       {/* Hero Section */}
       <div className="w-full max-w-4xl text-center py-12">
         <h1 className="text-4xl font-bold mb-4">Your Body, Your Canvas – Express Yourself Through Art</h1>
@@ -34,7 +50,7 @@ export default function Home() {
       
       {/* Gallery Carousel */}
       <div className="w-full max-w-4xl py-6">
-      <Slider {...settings}>
+        <Slider {...settings}>
           {facebookMedia.map((item, index) => (
             <div key={index} className="px-2">
               {item.type === "video" ? (
@@ -54,22 +70,6 @@ export default function Home() {
         <div className="text-center mt-4">
           <Link href="/gallery" className="text-red-500 text-lg underline">View All</Link>
         </div>
-      </div>
-      
-      {/* Navigation Buttons */}
-      <div className="w-full max-w-lg flex flex-col gap-4">
-        <Link href="/gallery" className="block w-full text-center bg-gray-800 py-3 rounded-lg text-xl">
-          View Gallery
-        </Link>
-        <Link href="/book" className="block w-full text-center bg-red-600 py-3 rounded-lg text-xl">
-          Book an Appointment
-        </Link>
-        <Link href="https://www.facebook.com/Julian.Ybarra.Tattoos" target="_blank" className="block w-full text-center bg-blue-600 py-3 rounded-lg text-xl">
-          Follow on Social Media
-        </Link>
-        <Link href="/faqs" className="block w-full text-center bg-gray-700 py-3 rounded-lg text-xl">
-          FAQs
-        </Link>
       </div>
     </div>
   );
