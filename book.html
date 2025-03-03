@@ -6,6 +6,8 @@
     <title>Book an Appointment - TatsbyJ</title>
     <link rel="stylesheet" href="styles.css">
     <script src="https://js.stripe.com/v3/"></script>
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.css">
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.js"></script>
 </head>
 <body>
     <div class="container">
@@ -30,7 +32,10 @@
             <p>Secure your tattoo session with a $200 deposit.</p>
         </header>
 
-        <form id="booking-form">
+        <!-- Interactive Calendar -->
+        <div id='calendar'></div>
+
+        <form id="booking-form" style="display:none;">
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required>
 
@@ -40,27 +45,36 @@
             <label for="phone">Phone Number:</label>
             <input type="tel" id="phone" name="phone" required>
 
-            <label for="date">Preferred Date:</label>
-            <input type="date" id="date" name="date" required>
-
-            <label for="time">Preferred Time:</label>
-            <input type="time" id="time" name="time" required>
+            <label for="selectedDate">Selected Date & Time:</label>
+            <input type="text" id="selectedDate" name="selectedDate" readonly required>
 
             <button type="button" id="pay-button">Pay $200 Deposit</button>
         </form>
     </div>
 
     <script>
-        const stripe = Stripe("TBD"); 
+        document.addEventListener('DOMContentLoaded', function () {
+            var calendarEl = document.getElementById('calendar');
+            var calendar = new FullCalendar.Calendar(calendarEl, {
+                initialView: 'dayGridMonth',
+                selectable: true,
+                select: function (info) {
+                    document.getElementById("selectedDate").value = info.startStr;
+                    document.getElementById("booking-form").style.display = "block";
+                }
+            });
+            calendar.render();
+        });
+
+        const stripe = Stripe("your-stripe-public-key"); // Replace with actual Stripe public key
 
         document.getElementById("pay-button").addEventListener("click", async () => {
             const name = document.getElementById("name").value;
             const email = document.getElementById("email").value;
             const phone = document.getElementById("phone").value;
-            const date = document.getElementById("date").value;
-            const time = document.getElementById("time").value;
+            const selectedDate = document.getElementById("selectedDate").value;
             
-            if (!name || !email || !phone || !date || !time) {
+            if (!name || !email || !phone || !selectedDate) {
                 alert("Please fill out all fields.");
                 return;
             }
@@ -69,7 +83,7 @@
             const response = await fetch("/create-checkout-session", {
                 method: "POST",
                 headers: { "Content-Type": "application/json" },
-                body: JSON.stringify({ name, email, phone, date, time, deposit: 200 })
+                body: JSON.stringify({ name, email, phone, selectedDate, deposit: 200 })
             });
             
             const session = await response.json();
@@ -78,4 +92,3 @@
     </script>
 </body>
 </html>
-
