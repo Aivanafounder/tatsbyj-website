@@ -48,28 +48,31 @@ export default function Home() {
         <p className="text-lg mb-6">Transform your vision into ink. Tattoos are more than just art; they are a reflection of your story.</p>
       </div>
       
-      {/* Gallery Carousel */}
-      <div className="w-full max-w-4xl py-6">
-        <Slider {...settings}>
-          {facebookMedia.map((item, index) => (
-            <div key={index} className="px-2">
-              {item.type === "video" ? (
-                <iframe 
-                  src={item.url} 
-                  width="300" 
-                  height="500" 
-                  allowFullScreen
-                  className="rounded-lg"
-                />
-              ) : (
-                <img src={item.url} alt={`Tattoo ${index + 1}`} width={300} height={300} className="rounded-lg" />
-              )}
-            </div>
-          ))}
-        </Slider>
-        <div className="text-center mt-4">
-          <Link href="/gallery" className="text-red-500 text-lg underline">View All</Link>
+      {/* Centered Gallery Carousel */}
+      <div className="w-full max-w-4xl py-6 flex justify-center">
+        <div className="w-full max-w-lg">
+          <Slider {...settings}>
+            {facebookMedia.map((item, index) => (
+              <div key={index} className="px-2 flex justify-center">
+                {item.type === "video" ? (
+                  <iframe 
+                    src={item.url} 
+                    width="300" 
+                    height="500" 
+                    allowFullScreen
+                    className="rounded-lg mx-auto"
+                  />
+                ) : (
+                  <img src={item.url} alt={`Tattoo ${index + 1}`} width={300} height={300} className="rounded-lg mx-auto" />
+                )}
+              </div>
+            ))}
+          </Slider>
         </div>
+      </div>
+      
+      <div className="text-center mt-4">
+        <Link href="/gallery" className="text-red-500 text-lg underline">View All</Link>
       </div>
     </div>
   );
