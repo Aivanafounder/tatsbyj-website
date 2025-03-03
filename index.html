@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>TatsbyJ - Tattoo Art</title>
+    <link rel="stylesheet" href="styles.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css">
+    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css">
+    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Buttons -->
+        <nav>
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="gallery.html" class="nav-btn">View Gallery</a>
+            <a href="book.html" class="nav-btn">Book an Appointment</a>
+            <a href="https://www.facebook.com/Julian.Ybarra.Tattoos" target="_blank" class="nav-btn">Follow on Social Media</a>
+            <a href="faqs.html" class="nav-btn">FAQs</a>
+        </nav>
+
+        <!-- Hero Section -->
+        <header>
+            <h1>Your Body, Your Canvas – Express Yourself Through Art</h1>
+            <p>Transform your vision into ink. Tattoos are more than just art; they are a reflection of your story.</p>
+        </header>
+
+        <!-- Gallery Carousel -->
+        <div class="carousel">
+            <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Julian.Ybarra.Tattoos/videos/934908988460719" width="300" height="500" allowfullscreen></iframe></div>
+            <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1734885490314549" width="300" height="500" allowfullscreen></iframe></div>
+            <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/3646209745602191" width="300" height="500" allowfullscreen></iframe></div>
+            <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/975240370165100" width="300" height="500" allowfullscreen></iframe></div>
+            <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/896662005137661" width="300" height="500" allowfullscreen></iframe></div>
+        </div>
+
+        <div class="view-all">
+            <a href="gallery.html">View All</a>
+        </div>
+    </div>
+
+    <script>
+        $(document).ready(function(){
+            $('.carousel').slick({
+                dots: true,
+                infinite: true,
+                speed: 500,
+                slidesToShow: 1,
+                slidesToScroll: 1,
+                autoplay: true,
+                autoplaySpeed: 3000,
+                arrows: true
+            });
+        });
+    </script>
+</body>
+</html>
