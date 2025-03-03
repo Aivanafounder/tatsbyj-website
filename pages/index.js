@@ -6,8 +6,8 @@ export default function Home() {
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-6">
       {/* Hero Section */}
       <div className="w-full max-w-4xl text-center py-12">
-        <h1 className="text-4xl font-bold mb-4">Welcome to TatsbyJ</h1>
-        <p className="text-lg mb-6">Custom Tattoos with Precision & Artistry</p>
+        <h1 className="text-4xl font-bold mb-4">Your Body, Your Canvas – Express Yourself Through Art</h1>
+        <p className="text-lg mb-6">Transform your vision into ink. Tattoos are more than just art; they are a reflection of your story.</p>
       </div>
       
       {/* Navigation Buttons */}
