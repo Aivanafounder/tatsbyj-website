@@ -25,7 +25,7 @@ export default function Home() {
   };
 
   return (
-    <div className="min-h-screen bg-black text-white flex flex-col items-center p-6">
+    <div className="min-h-screen bg-black text-white flex flex-col items-center p-6 w-full">
       {/* Centered Navigation Buttons with Spacing */}
       <div className="w-full max-w-lg flex flex-col items-center gap-6 mb-8">
         <Link href="/gallery" className="block w-full text-center bg-gray-800 py-4 px-6 rounded-lg text-xl">
@@ -49,7 +49,7 @@ export default function Home() {
       </div>
       
       {/* Centered Gallery Carousel */}
-      <div className="w-full max-w-4xl py-6 flex justify-center">
+      <div className="w-full max-w-4xl py-6 flex justify-center bg-black">
         <div className="w-full max-w-lg">
           <Slider {...settings}>
             {facebookMedia.map((item, index) => (
