@@ -5,6 +5,7 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const facebookMedia = [
+  { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Julian.Ybarra.Tattoos/videos/934908988460719" },
   { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1734885490314549" },
   { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/3646209745602191" },
   { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/975240370165100" },
