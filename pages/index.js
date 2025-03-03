@@ -5,7 +5,6 @@ import "slick-carousel/slick/slick.css";
 import "slick-carousel/slick/slick-theme.css";
 
 const facebookMedia = [
-  { type: "image", url: "https://www.facebook.com/photo/?fbid=1113276807472619&set=pb.100063709292524.-2207520000" },
   { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1734885490314549" },
   { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/3646209745602191" },
   { type: "video", url: "https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/975240370165100" },
@@ -34,8 +33,7 @@ export default function Home() {
       
       {/* Gallery Carousel */}
       <div className="w-full max-w-4xl py-6">
-        <h2 className="text-2xl font-bold text-center mb-4">Featured Work</h2>
-        <Slider {...settings}>
+      <Slider {...settings}>
           {facebookMedia.map((item, index) => (
             <div key={index} className="px-2">
               {item.type === "video" ? (
