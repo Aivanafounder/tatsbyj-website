@@ -22,12 +22,16 @@ export default function Home() {
     slidesToScroll: 1,
     autoplay: true,
     autoplaySpeed: 3000,
+    arrows: true,
   };
 
   return (
     <div className="min-h-screen bg-black text-white flex flex-col items-center p-6 w-full">
       {/* Centered Navigation Buttons with Spacing */}
       <div className="w-full max-w-lg flex flex-col items-center gap-6 mb-8">
+        <Link href="/" className="block w-full text-center bg-gray-900 py-4 px-6 rounded-lg text-xl">
+          Home
+        </Link>
         <Link href="/gallery" className="block w-full text-center bg-gray-800 py-4 px-6 rounded-lg text-xl">
           View Gallery
         </Link>
@@ -44,11 +48,10 @@ export default function Home() {
       
       {/* Hero Section */}
       <div className="w-full max-w-4xl text-center py-12">
-        <h1 className="text-4xl font-bold mb-4">Your Body, Your Canvas – Express Yourself Through Art</h1>
-        <p className="text-lg mb-6">Transform your vision into ink. Tattoos are more than just art; they are a reflection of your story.</p>
+        <h1 className="text-4xl font-bold mb-4">Tattoos by Julian</h1>
       </div>
       
-      {/* Centered Gallery Carousel */}
+      {/* Centered Gallery Carousel with Arrows */}
       <div className="w-full max-w-4xl py-6 flex justify-center bg-black">
         <div className="w-full max-w-lg">
           <Slider {...settings}>
