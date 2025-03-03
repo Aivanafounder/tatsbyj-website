@@ -33,7 +33,7 @@ export default function Home() {
       
       {/* Gallery Carousel */}
       <div className="w-full max-w-4xl py-6">
-        <h2 className="text-2xl font-bold text-center mb-4">Featured Tattoos</h2>
+        <h2 className="text-2xl font-bold text-center mb-4">Featured Work</h2>
         <Slider {...settings}>
           {facebookMedia.map((item, index) => (
             <div key={index} className="px-2">
@@ -41,7 +41,7 @@ export default function Home() {
                 <iframe 
                   src={item.url} 
                   width="300" 
-                  height="300" 
+                  height="500" 
                   allowFullScreen
                   className="rounded-lg"
                 />
