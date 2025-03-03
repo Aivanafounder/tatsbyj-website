@@ -29,7 +29,7 @@ export default function Home() {
       {/* Hero Section */}
       <div className="w-full max-w-4xl text-center py-12">
         <h1 className="text-4xl font-bold mb-4">Your Body, Your Canvas – Express Yourself Through Art</h1>
-        <p className="text-lg mb-6">Transform your vision into ink. Tattoos are more than just art; they are a reflection of your story.</p>
+        <p className="text-lg mb-6">Transform your vision into ink today! Tattoos are more than just art; they are a reflection of your story.</p>
       </div>
       
       {/* Gallery Carousel */}
