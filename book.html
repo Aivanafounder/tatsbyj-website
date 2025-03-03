@@ -18,30 +18,7 @@
 </head>
 <body>
     <div class="container">
-        <!-- Navigation Buttons -->
-        <nav>
-            <a href="index.html" class="nav-btn">Home</a>
-            <a href="book.html" class="nav-btn book-btn">Book an Appointment</a>
-            <div class="social-media">
-                <span class="view-artwork">View Artwork:</span>
-                <a href="https://www.facebook.com/Julian.Ybarra.Tattoos" target="_blank">
-                    <img src="facebook-icon.png" alt="Facebook" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com/2720tattoo/" target="_blank">
-                    <img src="instagram-icon.png" alt="Instagram" class="social-icon">
-                </a>
-            </div>
-        </nav>
-
-        <!-- Booking Form -->
-        <header>
-            <h1>Book an Appointment</h1>
-            <p>Secure your tattoo session with a $200 deposit.</p>
-        </header>
-
-        <!-- Interactive Calendar -->
         <div id='calendar'></div>
-
         <form id="booking-form" style="display:none;">
             <label for="name">Full Name:</label>
             <input type="text" id="name" name="name" required>
@@ -60,12 +37,13 @@
     </div>
 
     <script>
-        window.onload = function () {
-            var calendarEl = document.getElementById('calendar');
+        document.addEventListener("DOMContentLoaded", function () {
+            var calendarEl = document.getElementById("calendar");
             if (calendarEl) {
                 var calendar = new FullCalendar.Calendar(calendarEl, {
-                    initialView: 'dayGridMonth',
+                    initialView: "dayGridMonth",
                     selectable: true,
+                    plugins: [ "interaction" ],
                     select: function (info) {
                         document.getElementById("selectedDate").value = info.startStr;
                         document.getElementById("booking-form").style.display = "block";
@@ -75,7 +53,7 @@
             } else {
                 console.error("Calendar element not found.");
             }
-        };
+        });
 
         const stripe = Stripe("pk_live_51QyfSbJoTwERwYmxuNkbENHaYTwRFljxH8Ttv69Crk9Iihvq1uKdTSuwdfa2C6HD5iFU0AReuTTuQe9kz8J4BixU00wolWnbTM");
 
