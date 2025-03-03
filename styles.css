@@ -42,6 +42,19 @@ nav {
     background-color: #555;
 }
 
+/* Emphasized Book an Appointment Button */
+.book-btn {
+    background-color: #ff4500; /* Bright orange to pop */
+    font-size: 20px;
+    font-weight: bold;
+    padding: 20px;
+    max-width: 350px;
+}
+
+.book-btn:hover {
+    background-color: #ff6347; /* Slightly lighter orange */
+}
+
 /* Hero Section */
 header {
     margin-bottom: 30px;
@@ -82,4 +95,23 @@ iframe {
     color: red;
     font-size: 1.2em;
     text-decoration: underline;
+}
+
+/* Social Media Links with Icons */
+.social-media {
+    display: flex;
+    justify-content: center;
+    gap: 15px;
+    align-items: center;
+    margin-top: 15px;
+}
+
+.social-icon {
+    width: 40px;
+    height: 40px;
+    transition: transform 0.3s;
+}
+
+.social-icon:hover {
+    transform: scale(1.2);
 }
