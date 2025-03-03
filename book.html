@@ -1,1 +1,81 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Book an Appointment - TatsbyJ</title>
+    <link rel="stylesheet" href="styles.css">
+    <script src="https://js.stripe.com/v3/"></script>
+</head>
+<body>
+    <div class="container">
+        <!-- Navigation Buttons -->
+        <nav>
+            <a href="index.html" class="nav-btn">Home</a>
+            <a href="book.html" class="nav-btn book-btn">Book an Appointment</a>
+            <div class="social-media">
+                <span class="view-artwork">View Artwork:</span>
+                <a href="https://www.facebook.com/Julian.Ybarra.Tattoos" target="_blank">
+                    <img src="facebook-icon.png" alt="Facebook" class="social-icon">
+                </a>
+                <a href="https://www.instagram.com/2720tattoo/" target="_blank">
+                    <img src="instagram-icon.png" alt="Instagram" class="social-icon">
+                </a>
+            </div>
+        </nav>
+
+        <!-- Booking Form -->
+        <header>
+            <h1>Book an Appointment</h1>
+            <p>Secure your tattoo session with a $200 deposit.</p>
+        </header>
+
+        <form id="booking-form">
+            <label for="name">Full Name:</label>
+            <input type="text" id="name" name="name" required>
+
+            <label for="email">Email:</label>
+            <input type="email" id="email" name="email" required>
+
+            <label for="phone">Phone Number:</label>
+            <input type="tel" id="phone" name="phone" required>
+
+            <label for="date">Preferred Date:</label>
+            <input type="date" id="date" name="date" required>
+
+            <label for="time">Preferred Time:</label>
+            <input type="time" id="time" name="time" required>
+
+            <button type="button" id="pay-button">Pay $200 Deposit</button>
+        </form>
+    </div>
+
+    <script>
+        const stripe = Stripe("TBD"); 
+
+        document.getElementById("pay-button").addEventListener("click", async () => {
+            const name = document.getElementById("name").value;
+            const email = document.getElementById("email").value;
+            const phone = document.getElementById("phone").value;
+            const date = document.getElementById("date").value;
+            const time = document.getElementById("time").value;
+            
+            if (!name || !email || !phone || !date || !time) {
+                alert("Please fill out all fields.");
+                return;
+            }
+
+            // Send booking details to backend for Stripe Checkout
+            const response = await fetch("/create-checkout-session", {
+                method: "POST",
+                headers: { "Content-Type": "application/json" },
+                body: JSON.stringify({ name, email, phone, date, time, deposit: 200 })
+            });
+            
+            const session = await response.json();
+            stripe.redirectToCheckout({ sessionId: session.id });
+        });
+    </script>
+</body>
+</html>
 
