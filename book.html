@@ -5,9 +5,15 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Book an Appointment - TatsbyJ</title>
     <link rel="stylesheet" href="styles.css">
-    <script src="https://js.stripe.com/v3/"></script>
+    
+    <!-- FullCalendar Stylesheet -->
     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.css">
+    
+    <!-- FullCalendar Script -->
     <script src="https://cdnjs.cloudflare.com/ajax/libs/fullcalendar/5.11.3/main.min.js"></script>
+    
+    <!-- Stripe Script -->
+    <script src="https://js.stripe.com/v3/"></script>
 </head>
 <body>
     <div class="container">
@@ -53,18 +59,22 @@
     </div>
 
     <script>
-        document.addEventListener('DOMContentLoaded', function () {
+        window.onload = function () {
             var calendarEl = document.getElementById('calendar');
-            var calendar = new FullCalendar.Calendar(calendarEl, {
-                initialView: 'dayGridMonth',
-                selectable: true,
-                select: function (info) {
-                    document.getElementById("selectedDate").value = info.startStr;
-                    document.getElementById("booking-form").style.display = "block";
-                }
-            });
-            calendar.render();
-        });
+            if (calendarEl) {
+                var calendar = new FullCalendar.Calendar(calendarEl, {
+                    initialView: 'dayGridMonth',
+                    selectable: true,
+                    select: function (info) {
+                        document.getElementById("selectedDate").value = info.startStr;
+                        document.getElementById("booking-form").style.display = "block";
+                    }
+                });
+                calendar.render();
+            } else {
+                console.error("Calendar element not found.");
+            }
+        };
 
         const stripe = Stripe("pk_live_51QyfSbJoTwERwYmxuNkbENHaYTwRFljxH8Ttv69Crk9Iihvq1uKdTSuwdfa2C6HD5iFU0AReuTTuQe9kz8J4BixU00wolWnbTM");
 
