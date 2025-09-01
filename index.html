@@ -1,68 +1,111 @@
 <!DOCTYPE html>
 <html lang="en">
 <head>
-    <!-- Google tag (gtag.js) -->
-<script async src="https://www.googletagmanager.com/gtag/js?id=G-9R82F9WTZ1"></script>
-<script>
-  window.dataLayer = window.dataLayer || [];
-  function gtag(){dataLayer.push(arguments);}
-  gtag('js', new Date());
+  <!-- Google tag (gtag.js) -->
+  <script async src="https://www.googletagmanager.com/gtag/js?id=G-9R82F9WTZ1"></script>
+  <script>
+    window.dataLayer = window.dataLayer || [];
+    function gtag(){dataLayer.push(arguments);} gtag('js', new Date());
+    gtag('config', 'G-9R82F9WTZ1');
+  </script>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>TatsbyJ - Tattoo Art</title>
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css">
+  <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css">
+  <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
+  <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
 
-  gtag('config', 'G-9R82F9WTZ1');
-</script>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <title>TatsbyJ - Tattoo Art</title>
-    <link rel="stylesheet" href="styles.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick-theme.css">
-    <script src="https://code.jquery.com/jquery-3.6.0.min.js"></script>
-    <script src="https://cdn.jsdelivr.net/npm/slick-carousel/slick/slick.min.js"></script>
+  <style>
+    :root{
+      --ink:#f3f3f3; --muted:#c2c2c2; --line:rgba(255,255,255,.14); --card:rgba(15,15,15,.72); --accent:#e5b96b;
+    }
+    *{box-sizing:border-box}
+    html,body{height:100%}
+    body{
+      margin:0; font-family:system-ui,-apple-system,Segoe UI,Roboto,Ubuntu,Arial,sans-serif; color:var(--ink);
+      background: #0b0b0b url('3.png') center/cover fixed no-repeat;
+    }
+    body.with-overlay::before{
+      content:""; position:fixed; inset:0; background:rgba(0,0,0,.5); pointer-events:none; z-index:0;
+    }
+    .container{max-width:1100px; margin:0 auto; padding:18px; position:relative; z-index:1}
+
+    nav{display:flex; align-items:center; justify-content:space-between; gap:14px; flex-wrap:wrap; padding:12px 14px; border:1px solid var(--line); border-radius:16px; background:var(--card); backdrop-filter:blur(6px)}
+    .nav-btn{background:var(--accent); color:#111; text-decoration:none; padding:10px 16px; border-radius:999px; font-weight:700; border:0}
+    .social-media{display:flex; align-items:center; gap:10px}
+    .view-artwork{color:var(--muted); font-size:14px}
+    .social-icon{width:20px; height:20px; display:block; filter:invert(1)}
+
+    header{text-align:center; padding:28px 12px 8px}
+    header h1{margin:0; font-size:clamp(28px,6vw,54px); letter-spacing:.3px; text-shadow:0 2px 18px rgba(0,0,0,.35)}
+
+    .carousel{margin:18px 0; border:1px solid var(--line); border-radius:16px; background:var(--card); padding:14px; backdrop-filter:blur(6px)}
+    .carousel > div{position:relative; aspect-ratio:3/5; overflow:hidden; border-radius:12px}
+    .carousel iframe{position:absolute; inset:0; width:100%; height:100%; border:0}
+
+    .slick-dots li button:before{color:white; opacity:.4}
+    .slick-dots li.slick-active button:before{opacity:1}
+    .slick-prev:before, .slick-next:before{color:white}
+
+    @media (max-width: 520px){
+      nav{gap:10px}
+      .nav-btn{width:100%; text-align:center}
+      .view-artwork{display:none}
+    }
+  .promo-banner{background:linear-gradient(90deg,#1e90ff,#00bfff); color:white; text-align:center; font-size:1.3rem; font-weight:800; padding:14px; border-radius:0 0 14px 14px; box-shadow:0 4px 12px rgba(0,0,0,.4); letter-spacing:.5px; animation:pulse 2s infinite}
+@keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
+</style>
 </head>
 <body>
-    <div class="container">
-        <!-- Navigation Buttons -->
-        <nav>
-            <a href="https://calendar.app.google/FKwkxJndTfrFK3cm8" target="_blank" class="nav-btn book-btn">Book an Appointment</a>
-            <div class="social-media">
-                <span class="view-artwork">View Artwork:</span>
-                <a href="https://www.facebook.com/Julian.Ybarra.Tattoos" target="_blank">
-                    <img src="facebook-icon.png" alt="Facebook" class="social-icon">
-                </a>
-                <a href="https://www.instagram.com/2720tattoo/" target="_blank">
-                    <img src="instagram-icon.png" alt="Instagram" class="social-icon">
-                </a>
-            </div>
-        </nav>
+  <div class="promo-banner">
+    <img src="3.png" alt="2720 Tattoo Logo" style="height:80px; display:block; margin:0 auto 10px;">
+    💎 25% OFF for Online Booking 💎
+  </div>
+  <div class="container">
+    <nav>
+      <a href="https://calendar.app.google/FKwkxJndTfrFK3cm8" target="_blank" class="nav-btn book-btn" rel="noopener">Book an Appointment</a>
+      <div class="social-media">
+        <span class="view-artwork">View Artwork:</span>
+        <a href="https://www.facebook.com/Julian.Ybarra.Tattoos" target="_blank" rel="noopener">
+          <img src="facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com/2720tattoo/" target="_blank" rel="noopener">
+          <img src="instagram-icon.png" alt="Instagram" class="social-icon">
+        </a>
+      </div>
+    </nav>
 
-        <!-- Hero Section -->
-        <header>
-            <h1>Tattoos by Julian</h1>
-        </header>
+    <header>
+      <h1>Tattoos by Julian</h1>
+      <p style="max-width:700px; margin:12px auto 0; font-size:1.1rem; line-height:1.5; color:var(--muted); background:var(--card); padding:12px 16px; border-radius:12px;">
+        Julian is a dedicated tattoo artist with over 20 years of experience specializing in clean lines, fine detail, and custom designs that fit each client’s style. Serving the Toledo area for over 11 years, he creates all styles of tattoos including black and grey realism, color American and Japanese traditional tattoos, as well as geometric tattoos. He strives to create art that looks stunning on day one and heals beautifully for life.
+      </p>
+    </header>
 
-        <!-- Gallery Carousel -->
-        <div class="carousel">
-            <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Julian.Ybarra.Tattoos/videos/934908988460719" width="300" height="500" allowfullscreen></iframe></div>
-            <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1734885490314549" width="300" height="500" allowfullscreen></iframe></div>
-            <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/3646209745602191" width="300" height="500" allowfullscreen></iframe></div>
-            <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/975240370165100" width="300" height="500" allowfullscreen></iframe></div>
-            <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/896662005137661" width="300" height="500" allowfullscreen></iframe></div>
-        </div>
+    <div class="carousel">
+      <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/Julian.Ybarra.Tattoos/videos/934908988460719" allowfullscreen title="Facebook video 1"></iframe></div>
+      <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/1734885490314549" allowfullscreen title="Facebook video 2"></iframe></div>
+      <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/3646209745602191" allowfullscreen title="Facebook video 3"></iframe></div>
+      <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/975240370165100" allowfullscreen title="Facebook video 4"></iframe></div>
+      <div><iframe src="https://www.facebook.com/plugins/video.php?href=https://www.facebook.com/reel/896662005137661" allowfullscreen title="Facebook video 5"></iframe></div>
     </div>
 
-    <script>
-        $(document).ready(function(){
-            $('.carousel').slick({
-                dots: true,
-                infinite: true,
-                speed: 500,
-                slidesToShow: 1,
-                slidesToScroll: 1,
-                autoplay: true,
-                autoplaySpeed: 3000,
-                arrows: true
-            });
-        });
-    </script>
+    <!-- Local Video Carousel -->
+    <div class="carousel">
+      <div><video controls muted loop><source src="tatsbyjpics/video1.mp4" type="video/mp4">Your browser does not support video.</video></div>
+      <div><video controls muted loop><source src="tatsbyjpics/video2.mp4" type="video/mp4">Your browser does not support video.</video></div>
+      <div><video controls muted loop><source src="tatsbyjpics/video3.mp4" type="video/mp4">Your browser does not support video.</video></div>
+    </div>
+  </div>
+
+  <script>
+    $(function(){
+      $('.carousel').slick({
+        dots:true, infinite:true, speed:500, slidesToShow:1, slidesToScroll:1,
+        autoplay:true, autoplaySpeed:3000, arrows:true, adaptiveHeight:true
+      });
+    });
+  </script>
 </body>
 </html>
