@@ -41,7 +41,7 @@
     header h1{margin:0; font-size:clamp(28px,6vw,54px); letter-spacing:.3px; text-shadow:0 2px 18px rgba(0,0,0,.35)}
 
     .carousel{margin:18px auto; border:1px solid var(--line); border-radius:16px; background:var(--card); padding:14px; backdrop-filter:blur(6px); max-width:640px}
-    .carousel > div{position:relative; aspect-ratio:16/9; overflow:hidden; border-radius:12px; margin:0 auto}
+    .carousel > div{overflow:hidden; border-radius:12px; margin:0 auto}
     .carousel iframe, .carousel video{position:absolute; inset:0; width:100%; height:100%; border:0}
 
     .slick-dots li button:before{color:white; opacity:.4}
@@ -55,10 +55,68 @@
     }
   .promo-banner{background:linear-gradient(90deg,#1e90ff,#00bfff); color:white; text-align:center; font-size:1.3rem; font-weight:800; padding:14px; border-radius:0 0 14px 14px; box-shadow:0 4px 12px rgba(0,0,0,.4); letter-spacing:.5px; animation:pulse 2s infinite}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
-</style>
+.carousel img{width:100%; height:auto; display:block; border-radius:12px}
+  </style>
 </head>
 <body>
   <div class="promo-banner">
+    💎 25% OFF for Online Booking 💎
+  </div>
+  <div class="container">
+    <nav>
+      <a href="https://calendar.app.google/FKwkxJndTfrFK3cm8" target="_blank" class="nav-btn book-btn" rel="noopener">Book an Appointment</a>
+      <div class="social-media">
+        <span class="view-artwork">View Artwork:</span>
+        <a href="https://www.facebook.com/Julian.Ybarra.Tattoos" target="_blank" rel="noopener">
+          <img src="facebook-icon.png" alt="Facebook" class="social-icon">
+        </a>
+        <a href="https://www.instagram.com/2720tattoo/" target="_blank" rel="noopener">
+          <img src="instagram-icon.png" alt="Instagram" class="social-icon">
+        </a>
+      </div>
+    </nav>
+
+    <header>
+      <h1>Tattoos by Julian</h1>
+      <p style="max-width:700px; margin:12px auto 0; font-size:1.1rem; line-height:1.5; color:var(--muted); background:var(--card); padding:12px 16px; border-radius:12px;">
+        Julian is a dedicated tattoo artist with over 20 years of experience specializing in clean lines, fine detail, and custom designs that fit each client’s style. Serving the Toledo area for over 11 years, he creates all styles of tattoos including black and grey realism, color American and Japanese traditional tattoos, as well as geometric tattoos. He strives to create art that looks stunning on day one and heals beautifully for life.
+      </p>
+    </header>
+
+    <!-- Photo Carousel -->
+    <div class="carousel">
+      <div><img loading="lazy" src="tatsbyjaypics/photo1.jpg" alt="Tattoo artwork 1"></div>
+      <div><img loading="lazy" src="tatsbyjaypics/photo2.jpg" alt="Tattoo artwork 2"></div>
+      <div><img loading="lazy" src="tatsbyjaypics/photo3.jpg" alt="Tattoo artwork 3"></div>
+      <div><img loading="lazy" src="tatsbyjaypics/photo4.jpg" alt="Tattoo artwork 4"></div>
+      <div><img loading="lazy" src="tatsbyjaypics/photo5.jpg" alt="Tattoo artwork 5"></div>
+    </div>
+  </div>
+      <div><video autoplay muted loop playsinline preload="metadata"><source src="tatsbyjaypics/video2.mp4" type="video/mp4">Your browser does not support video.</video></div>
+      <div><video autoplay muted loop playsinline preload="metadata"><source src="tatsbyjaypics/video3.mp4" type="video/mp4">Your browser does not support video.</video></div>
+      <div><video autoplay muted loop playsinline preload="metadata"><source src="tatsbyjaypics/video4.mp4" type="video/mp4">Your browser does not support video.</video></div>
+      <div><video autoplay muted loop playsinline preload="metadata"><source src="tatsbyjaypics/video5.mp4" type="video/mp4">Your browser does not support video.</video></div>
+    </div>
+  </div>
+
+  <script>
+    $(function(){
+      $('.carousel').slick({
+        dots:true,
+        infinite:true,
+        speed:500,
+        slidesToShow:1,
+        slidesToScroll:1,
+        autoplay:true,
+        autoplaySpeed:3000,
+        arrows:true,
+        adaptiveHeight:true
+      });
+
+      });
+  </script>
+</body>
+</html>
     💎 25% OFF for Online Booking 💎
   </div>
   <div class="container">
