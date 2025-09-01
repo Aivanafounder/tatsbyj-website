@@ -42,7 +42,7 @@
 
     .carousel{margin:18px auto; border:1px solid var(--line); border-radius:16px; background:var(--card); padding:14px; backdrop-filter:blur(6px); max-width:640px}
     .carousel > div{overflow:hidden; border-radius:12px; margin:0 auto}
-    .carousel iframe, .carousel video{position:absolute; inset:0; width:100%; height:100%; border:0}
+    .carousel img, .carousel video{width:100%; height:auto; display:block; border-radius:12px}
 
     .slick-dots li button:before{color:white; opacity:.4}
     .slick-dots li.slick-active button:before{opacity:1}
@@ -55,7 +55,6 @@
     }
   .promo-banner{background:linear-gradient(90deg,#1e90ff,#00bfff); color:white; text-align:center; font-size:1.3rem; font-weight:800; padding:14px; border-radius:0 0 14px 14px; box-shadow:0 4px 12px rgba(0,0,0,.4); letter-spacing:.5px; animation:pulse 2s infinite}
 @keyframes pulse{0%{transform:scale(1)}50%{transform:scale(1.03)}100%{transform:scale(1)}}
-.carousel img{width:100%; height:auto; display:block; border-radius:12px}
   </style>
 </head>
 <body>
@@ -81,22 +80,26 @@
       <p style="max-width:700px; margin:12px auto 0; font-size:1.1rem; line-height:1.5; color:var(--muted); background:var(--card); padding:12px 16px; border-radius:12px;">
         Julian is a dedicated tattoo artist with over 20 years of experience specializing in clean lines, fine detail, and custom designs that fit each client’s style. Serving the Toledo area for over 11 years, he creates all styles of tattoos including black and grey realism, color American and Japanese traditional tattoos, as well as geometric tattoos. He strives to create art that looks stunning on day one and heals beautifully for life.
       </p>
+      <div style='text-align:center; margin-top:20px;'>
+        <img src="julian ybarra.jpg" alt="Julian Ybarra" style="max-width:200px; border-radius:50%; box-shadow:0 0 10px rgba(0,0,0,.6);">
+      </div>
     </header>
 
-    <!-- Photo Carousel -->
+    <!-- Sleeve Gallery -->
     <div class="carousel">
-      <div><img loading="lazy" src="tatsbyjaypics/photo1.jpg" alt="Tattoo artwork 1"></div>
-      <div><img loading="lazy" src="tatsbyjaypics/photo2.jpg" alt="Tattoo artwork 2"></div>
-      <div><img loading="lazy" src="tatsbyjaypics/photo3.jpg" alt="Tattoo artwork 3"></div>
-      <div><img loading="lazy" src="tatsbyjaypics/photo4.jpg" alt="Tattoo artwork 4"></div>
-      <div><img loading="lazy" src="tatsbyjaypics/photo5.jpg" alt="Tattoo artwork 5"></div>
+      <div><img loading="lazy" src="medusa.jpg" alt="Medusa Leg Sleeve Tattoo"></div>
+      <div><img loading="lazy" src="joker.jpeg" alt="Joker Stomach Tattoo"></div>
+      <div><img loading="lazy" src="image3.jpeg" alt="Greek God Sleeve Tattoo"></div>
+      <div><img loading="lazy" src="american tattoo.jpg" alt="American Eagle Sleeve Tattoo"></div>
     </div>
-  </div>
-      <div><video autoplay muted loop playsinline preload="metadata"><source src="tatsbyjaypics/video2.mp4" type="video/mp4">Your browser does not support video.</video></div>
-      <div><video autoplay muted loop playsinline preload="metadata"><source src="tatsbyjaypics/video3.mp4" type="video/mp4">Your browser does not support video.</video></div>
-      <div><video autoplay muted loop playsinline preload="metadata"><source src="tatsbyjaypics/video4.mp4" type="video/mp4">Your browser does not support video.</video></div>
-      <div><video autoplay muted loop playsinline preload="metadata"><source src="tatsbyjaypics/video5.mp4" type="video/mp4">Your browser does not support video.</video></div>
+
+    <!-- Video Gallery -->
+    <div class="carousel">
+      <div><video controls autoplay muted loop playsinline preload="metadata"><source src="Video_5.mov" type="video/mp4">Your browser does not support video.</video></div>
+      <div><video controls autoplay muted loop playsinline preload="metadata"><source src="Video_6.mov" type="video/mp4">Your browser does not support video.</video></div>
+      <div><video controls autoplay muted loop playsinline preload="metadata"><source src="Video (1).mov" type="video/mp4">Your browser does not support video.</video></div>
     </div>
+
   </div>
 
   <script>
@@ -112,8 +115,7 @@
         arrows:true,
         adaptiveHeight:true
       });
-
-      });
+    });
   </script>
 </body>
 </html>
